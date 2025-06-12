@@ -17,7 +17,7 @@ class MasterCategoryServiceImpl (
             result.add(
                 ResCategoryDto(
                     id = category.id,
-                    name = category.name
+                    category = category.category
                 )
             )
         }
