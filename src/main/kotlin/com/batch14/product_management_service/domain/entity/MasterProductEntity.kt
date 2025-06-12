@@ -41,7 +41,7 @@ data class MasterProductEntity(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id") //kolom yang mengaitkan di user
-    var role: MasterCategoryEntity? = null,
+    var category: MasterCategoryEntity? = null,
 
     @CreationTimestamp
     @Column(name="created_at", insertable = false, updatable = false) //karena current jadi false saja
