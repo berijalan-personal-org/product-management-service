@@ -24,6 +24,6 @@ data class MasterCategoryEntity(
     @Column(name="id", insertable = false, updatable = false)
     val id: Int = 0,
 
-    @Column(name="name", nullable = false)
-    val name: String
+    @Column(name="category", nullable = false)
+    val category: String
 )
