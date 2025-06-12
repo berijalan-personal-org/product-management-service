@@ -38,7 +38,7 @@ data class MasterProductEntity(
 
     @Column(name="stock", nullable = false)
     val stock: Int,
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id") //kolom yang mengaitkan di user
     var role: MasterCategoryEntity? = null,
