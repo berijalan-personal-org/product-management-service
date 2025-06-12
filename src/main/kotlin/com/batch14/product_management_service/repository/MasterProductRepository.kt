@@ -7,12 +7,12 @@ import org.springframework.data.repository.query.Param
 
 interface MasterProductRepository: JpaRepository<MasterProductEntity, Int>{
     @Query("""
-        SELECT U FROM MasterUserEntity U
+        SELECT U FROM MasterProductEntity U
         LEFT JOIN FETCH U.category
         WHERE U.isDelete = false
         AND U.isActive = true
     """, nativeQuery = false)
-    fun getAllActiveUser(): List<MasterProductEntity>
+    fun getAllProduct(): List<MasterProductEntity>
 
     @Query("""
         SELECT U FROM MasterProductEntity U
