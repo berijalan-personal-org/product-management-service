@@ -6,5 +6,6 @@ data class ResProductDto(
     val price: Int,
     val stock: Int,
     val categoryId: Int?,
-    val categoryName: String?
+    val categoryName: String?,
+    val createdBy: String?
 )

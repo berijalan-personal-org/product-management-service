@@ -4,6 +4,7 @@ import com.batch14.product_management_service.domain.dto.response.ResProductDto
 import com.batch14.product_management_service.service.MasterProductService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -18,7 +19,10 @@ class ProductController (
     }
 
     @GetMapping("/{id}")
-    fun getProductById(id: Int): ResponseEntity<ResProductDto> {
-        return ResponseEntity.ok(masterProductService.getProductById(id))
+    fun getProductById(
+        @PathVariable id: Int
+    ): ResponseEntity<ResProductDto> {
+        val product = masterProductService.getProductById(id)
+        return ResponseEntity.ok(product)
     }
 }
