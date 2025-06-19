@@ -22,4 +22,12 @@ interface MasterProductRepository: JpaRepository<MasterProductEntity, Int>{
         AND U.id = :id
     """, nativeQuery = false)
     fun getProductById(@Param("id") id: Int): MasterProductEntity?
+
+    @Query("""
+        SELECT U FROM MasterProductEntity U
+        LEFT JOIN FETCH U.category
+        WHERE U.isDelete = false
+        AND U.id IN :ids
+    """, nativeQuery = false)
+    fun getAllProductByIds(@Param("ids") ids: List<Int>): List<MasterProductEntity>
 }

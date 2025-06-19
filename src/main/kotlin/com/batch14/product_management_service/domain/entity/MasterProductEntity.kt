@@ -48,7 +48,7 @@ data class MasterProductEntity(
     var createdAt: Timestamp? = null,
 
     @Column(name="created_by")
-    var createdBy: String? = null,
+    var createdBy: Int? = null,
 
     @UpdateTimestamp
     @Column(name="updated_at", insertable = false, updatable = false) //karena current jadi false saja
